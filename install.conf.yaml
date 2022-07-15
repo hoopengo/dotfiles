@@ -1,0 +1,21 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+
+- create:
+    - ~/.config
+
+- link:
+    ~/.config/fish/config.fish: fish/config.fish
+    ~/.config/fish/functions: fish/functions
+    ~/.config/flake8: flake8
+    ~/.config/pypoetry/config.toml: poetry/config.toml
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+  - mkdir -p ~/bin
+  - curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > /tmp/omf-install && chmod +x /tmp/omf-install
+  - fish /tmp/omf-install --noninteractive && rm /tmp/omf-install
