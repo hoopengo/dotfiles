@@ -19,3 +19,4 @@
   - mkdir -p ~/bin
   - curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > /tmp/omf-install && chmod +x /tmp/omf-install
   - fish /tmp/omf-install --noninteractive && rm /tmp/omf-install
+  - omf install https://github.com/jhillyerd/plugin-git
